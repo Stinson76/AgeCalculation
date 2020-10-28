@@ -1,0 +1,40 @@
+// Cedestinson Ductan
+import java.time.Period;
+import javax.swing.JOptionPane;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+
+public class AgeCalculator{
+	
+	
+public static void main(String[]args) {	
+String s =JOptionPane.showInputDialog("Enter your birth date in the format dd/MM/yyyy");
+
+
+
+
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");    
+LocalDate today = LocalDate.now();
+
+
+
+
+
+
+LocalDate birthday = LocalDate.parse(s,formatter);
+
+Period p = Period.between(birthday, today);
+System.out.println("You are " + p.getYears() + " years, " + 
+                     p.getMonths() +
+                   " months and " + p.getDays() +
+                   " days young.");
+ 
+}
+ 
+}
+
+
+
+
